@@ -1,14 +1,20 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
-import { User } from "../../backend/src/entity/User"
+import { User } from "./entity/User"
 
 export const AppDataSource = new DataSource({
     type: "mysql",
     host: "localhost",
     port: 3306,
-    username: "root",
-    password: "NickiDiao1001!!Kimy",
-    database: "database",
+    username: "test",
+    password: "test",
+    database: "test",
+
+// Anouk
+/*  username: "root",
+    password: "Geheim",
+    database: "whatsevent", */
+
     synchronize: true,
     logging: true,
     entities: [User],
