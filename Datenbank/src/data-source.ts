@@ -9,6 +9,12 @@ export const AppDataSource = new DataSource({
     username: "test",
     password: "test",
     database: "test",
+
+// Anouk
+/*  username: "root",
+    password: "Geheim",
+    database: "whatsevent", */
+
     synchronize: true,
     logging: true,
     entities: [User],
