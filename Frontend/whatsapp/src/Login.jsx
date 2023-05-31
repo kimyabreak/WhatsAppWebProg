@@ -5,7 +5,7 @@ export const Login = (props) => {
 
     const handleSubmit = (e) =>{
         e.preventDefautl();
-        console.log(email);
+        console.log(number);
     }
 
     return(
