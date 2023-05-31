@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 export const Login = (props) => {
-    const [email, setEmail] = useState('');
+    const [number, setNumber] = useState('');
     const [pass, setPass] = useState('');
 
     const handleSubmit = (e) =>{
@@ -12,8 +12,8 @@ export const Login = (props) => {
         <div className="auto-form-container">
             <h2>Login</h2>
         <form className="login-form" onSubmit={handleSubmit}>
-            <label htmlFor="email">Number</label>
-            <input value={email} onChange={(e)=>setEmail(e.target.value)} type="email" placeholder="+49 1234 567890" id="email" name="email"/>
+            <label htmlFor="number">Number</label>
+            <input value={number} onChange={(e)=>setNumber(e.target.value)} type="number" placeholder="+49 1234 567890" id="number" name="number"/>
             <label htmlFor="password">Password</label>
             <input value={pass} onChange={(e)=>setPass(e.target.value)} type="password" placeholder="*********" id="password" name="password"/>
             <button type="submit">Log In</button>
