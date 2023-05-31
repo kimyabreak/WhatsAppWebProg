@@ -28,7 +28,7 @@ export class User {
     @PrimaryGeneratedColumn()
     id: number
 
-    @PrimaryColumn()
+    @Column()
     phone: string
 
     @Column()
@@ -46,7 +46,7 @@ export class User {
     @Column({
         type: "enum",
         enum: ["admin", "user", "member"],
-        default: "admin",
+        default: "user",
     })
     role: UserRoleType
 

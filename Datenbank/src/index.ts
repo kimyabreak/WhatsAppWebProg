@@ -1,6 +1,6 @@
 import { Admin } from "typeorm"
 import { AppDataSource } from "./data-source"
-import { User, UserRole } from "./entity/User"
+import { User } from "./entity/User"
 
 AppDataSource.initialize().then(async () => {
 
@@ -10,7 +10,7 @@ AppDataSource.initialize().then(async () => {
     user.firstName = "Anouk"
     user.lastName = "Lofi"
     user.age = 20
-    user.role = UserRole.ADMIN
+    user.role = 'admin'
     await AppDataSource.manager.save(user)
     console.log("Saved a new user " + user.firstName + user.lastName + "(" + user.age + ")" + "with id: " + user.phone)
 
