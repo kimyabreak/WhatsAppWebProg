@@ -1,11 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, PrimaryColumn, OneToMany, ManyToOne } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, PrimaryColumn, OneToMany, ManyToOne, ManyToMany } from "typeorm"
 
-//Rollen in einer Gruppe
-export enum UserRole {
-    USER = "user",              // Nutzer
-    ADMIN = "admin",            // Administrator
-    MEMBER = "groupmember",     // Gruppenmitglied
-}
+export type UserRoleType = "admin" | "user" | "member"
 
 // Standardvorlage User
 /* @Entity()
@@ -50,10 +45,10 @@ export class User {
 
     @Column({
         type: "enum",
-        enum: UserRole,
-        default: UserRole.USER,
+        enum: ["admin", "user", "member"],
+        default: "admin",
     })
-    role: UserRole
+    role: UserRoleType
 
     @OneToMany(type => Group, groups => groups.id)
     groups: Group[]
@@ -66,7 +61,7 @@ export class Group {
     @PrimaryGeneratedColumn()
     id: number
 
-    @ManyToOne(type => User, user => user.groups)
+    @OneToMany(type => User, user => user.groups)
     user: User[]
 
 }
